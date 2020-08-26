@@ -23,6 +23,7 @@ On 6 August 2014, the UK announced its Treasury had been commissioned a study of
 ## Architecture
 
 ![](https://github.com/CormacKrum/Python-And-CryptoCurrency/blob/master/arch.jpg)
+
 Decentralized cryptocurrency is produced by the entire cryptocurrency system collectively, at a rate which is defined when the system is created and which is publicly known. In centralized banking and economic systems such as the Federal Reserve System, corporate boards or governments control the supply of currency by printing units of fiat money or demanding additions to digital banking ledgers. In the case of decentralized cryptocurrency, companies or governments cannot produce new units, and have not so far provided backing for other firms, banks or corporate entities which hold asset value measured in it. The underlying technical system upon which decentralized cryptocurrencies are based was created by the group or individual known as Satoshi Nakamoto.
 
 As of May 2018, over 1,800 cryptocurrency specifications existed. Within a cryptocurrency system, the safety, integrity and balance of ledgers is maintained by a community of mutually distrustful parties referred to as miners: who use their computers to help validate and timestamp transactions, adding them to the ledger in accordance with a particular timestamping scheme.
@@ -70,7 +71,7 @@ Nvidia has asked retailers to do what they can when it comes to selling GPUs to 
 
 ### Wallets
 
-![](https://github.com/CormacKrum/Python-And-CryptoCurrency/blob/master/wallet.jpg)
+![](https://github.com/CormacKrum/Python-And-CryptoCurrency/blob/master/wallet.png)
 *An example paper printable bitcoin wallet consisting of one bitcoin address for receiving and the corresponding private key for spending.*
 
 A cryptocurrency wallet stores the public and private "keys" or "addresses" which can be used to receive or spend the cryptocurrency. With the private key, it is possible to write in the public ledger, effectively spending the associated cryptocurrency. With the public key, it is possible for others to send currency to the wallet.
