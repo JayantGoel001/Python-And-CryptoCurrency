@@ -4,6 +4,8 @@ A cryptocurrency (or crypto currency) is a digital asset designed to work as a m
 
 Bitcoin, first released as open-source software in 2009, is the first decentralized cryptocurrency. Since the release of bitcoin, over 6,000 altcoins (alternative variants of bitcoin, or other cryptocurrencies) have been created.
 
+![](https://github.com/CormacKrum/Python-And-CryptoCurrency/blob/master/cryptocurrency.jpg)
+
 ## History
 
 In 1983, the American cryptographer David Chaum conceived an anonymous cryptographic electronic money called ecash. Later, in 1995, he implemented it through Digicash,an early form of cryptographic electronic payments which required user software in order to withdraw notes from a bank and designate specific encrypted keys before it can be sent to a recipient. This allowed the digital currency to be untraceable by the issuing bank, the government, or any third party.
@@ -16,17 +18,24 @@ The first decentralized cryptocurrency, bitcoin, was created in 2009 by presumab
 
 On 6 August 2014, the UK announced its Treasury had been commissioned a study of cryptocurrencies, and what role, if any, they can play in the UK economy. The study was also to report on whether regulation should be considered.
 
+![](https://github.com/CormacKrum/Python-And-CryptoCurrency/blob/master/bitcoin.jpg)
+
 ## Architecture
 
+![](https://github.com/CormacKrum/Python-And-CryptoCurrency/blob/master/arch.jpg)
 Decentralized cryptocurrency is produced by the entire cryptocurrency system collectively, at a rate which is defined when the system is created and which is publicly known. In centralized banking and economic systems such as the Federal Reserve System, corporate boards or governments control the supply of currency by printing units of fiat money or demanding additions to digital banking ledgers. In the case of decentralized cryptocurrency, companies or governments cannot produce new units, and have not so far provided backing for other firms, banks or corporate entities which hold asset value measured in it. The underlying technical system upon which decentralized cryptocurrencies are based was created by the group or individual known as Satoshi Nakamoto.
 
 As of May 2018, over 1,800 cryptocurrency specifications existed. Within a cryptocurrency system, the safety, integrity and balance of ledgers is maintained by a community of mutually distrustful parties referred to as miners: who use their computers to help validate and timestamp transactions, adding them to the ledger in accordance with a particular timestamping scheme.
 
 Most cryptocurrencies are designed to gradually decrease production of that currency, placing a cap on the total amount of that currency that will ever be in circulation. Compared with ordinary currencies held by financial institutions or kept as cash on hand, cryptocurrencies can be more difficult for seizure by law enforcement. This difficulty is derived from leveraging cryptographic technologies.
 
+![](https://github.com/CormacKrum/Python-And-CryptoCurrency/blob/master/blockchain2.jpg)
+
 ### Blockchain
 
 The validity of each cryptocurrency's coins is provided by a blockchain. A blockchain is a continuously growing list of records, called blocks, which are linked and secured using cryptography. Each block typically contains a hash pointer as a link to a previous block, a timestamp and transaction data. By design, blockchains are inherently resistant to modification of the data. It is "an open, distributed ledger that can record transactions between two parties efficiently and in a verifiable and permanent way". For use as a distributed ledger, a blockchain is typically managed by a peer-to-peer network collectively adhering to a protocol for validating new blocks. Once recorded, the data in any given block cannot be altered retroactively without the alteration of all subsequent blocks, which requires collusion of the network majority.
+
+![](https://github.com/CormacKrum/Python-And-CryptoCurrency/blob/master/blockchain.jpg)
 
 Blockchains are secure by design and are an example of a distributed computing system with high Byzantine fault tolerance. Decentralized consensus has therefore been achieved with a blockchain. The public nature of the blockchain ledger protects the integrity of whatever is being transacted since no one entity owns the database. The added work required to solve the encryption in a proof-of-stake system ensures that the public ledger is not modified at random, thus solving the double-spending problem without the need of a trusted authority or central server to administer the database, assuming no 51% attack (that has worked against several cryptocurrencies).
 
@@ -37,11 +46,15 @@ The first timestamping scheme invented was the proof-of-work scheme. The most wi
 
 Some other hashing algorithms that are used for proof-of-work include CryptoNight, Blake, SHA-3, and X11.
 
+![](https://github.com/CormacKrum/Python-And-CryptoCurrency/blob/master/timestamp.png)
+
 The proof-of-stake is a method of securing a cryptocurrency network and achieving distributed consensus through requesting users to show ownership of a certain amount of currency. It is different from proof-of-work systems that run difficult hashing algorithms to validate electronic transactions. The scheme is largely dependent on the coin, and there's currently no standard form of it. Some cryptocurrencies use a combined proof-of-work and proof-of-stake scheme.
 
 ### Mining
 
 In cryptocurrency networks, mining is a validation of transactions. For this effort, successful miners obtain new cryptocurrency as a reward. The reward decreases transaction fees by creating a complementary incentive to contribute to the processing power of the network. The rate of generating hashes, which validate any transaction, has been increased by the use of specialized machines such as FPGAs and ASICs running complex hashing algorithms like SHA-256 and Scrypt. This arms race for cheaper-yet-efficient machines has existed since the day the first cryptocurrency, bitcoin, was introduced in 2009. With more people venturing into the world of virtual currency, generating hashes for this validation has become far more complex over the years, with miners having to invest large sums of money on employing multiple high performance ASICs. Thus the value of the currency obtained for finding a hash often does not justify the amount of money spent on setting up the machines, the cooling facilities to overcome the heat they produce, and the electricity required to run them. As of July 2019, bitcoin's electricity consumption is estimated to about 7 gigawatts, 0.2% of the global total, or equivalent to that of Switzerland.
+
+![](https://github.com/CormacKrum/Python-And-CryptoCurrency/blob/master/mining.jpg)
 
 Some miners pool resources, sharing their processing power over a network to split the reward equally, according to the amount of work they contributed to the probability of finding a block. A "share" is awarded to members of the mining pool who present a valid partial proof-of-work.
 
@@ -57,6 +70,18 @@ Nvidia has asked retailers to do what they can when it comes to selling GPUs to 
 
 ### Wallets
 
-An example paper printable bitcoin wallet consisting of one bitcoin address for receiving and the corresponding private key for spending
+![](https://github.com/CormacKrum/Python-And-CryptoCurrency/blob/master/wallet.jpg)
+*An example paper printable bitcoin wallet consisting of one bitcoin address for receiving and the corresponding private key for spending.*
 
 A cryptocurrency wallet stores the public and private "keys" or "addresses" which can be used to receive or spend the cryptocurrency. With the private key, it is possible to write in the public ledger, effectively spending the associated cryptocurrency. With the public key, it is possible for others to send currency to the wallet.
+
+
+### Anonymity
+
+Bitcoin is pseudonymous rather than anonymous in that the cryptocurrency within a wallet is not tied to people, but rather to one or more specific keys (or "addresses"). Thereby, bitcoin owners are not identifiable, but all transactions are publicly available in the blockchain. Still, cryptocurrency exchanges are often required by law to collect the personal information of their users.
+
+Additions such as Zerocoin, Zerocash and CryptoNote have been suggested, which would allow for additional anonymity and fungibility.
+
+### Fungibility
+
+Most cryptocurrency tokens are fungible and interchangeable. However, unique non-fungible tokens also exist. Such tokens can serve as assets in games like CryptoKitties.
