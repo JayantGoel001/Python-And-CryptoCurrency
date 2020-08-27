@@ -1,7 +1,5 @@
 import json
 from requests import Session
-from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
-from datetime import datetime
 
 url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
 
