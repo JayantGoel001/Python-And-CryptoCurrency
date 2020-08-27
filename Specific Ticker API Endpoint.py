@@ -2,7 +2,7 @@ import json
 from requests import Session
 
 
-def getResult(url):
+def getResult(link):
     headers = {
         'Accepts': 'application/json',
         'X-CMC_PRO_API_KEY': '46461c59-18e8-445d-93aa-0dfb99a9b0e0',
@@ -11,7 +11,7 @@ def getResult(url):
     session = Session()
     session.headers.update(headers)
 
-    response = session.get(url)
+    response = session.get(link)
     results = response.json()
     return results
 
