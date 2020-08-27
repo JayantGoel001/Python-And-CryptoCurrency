@@ -27,7 +27,7 @@ try:
 
     print("Active Currency :", active_currency)
     print("Active Market :", active_markets)
-    print("Bitcoin Percentage :", bitcoin_percentage)
+    print("Bitcoin Percentage :", str(bitcoin_percentage), "%")
     print("Last Updated :", last_updates)
     print("Global Capital :", global_cap)
     print("Global volume :", global_volume)
