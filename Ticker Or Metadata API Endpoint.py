@@ -56,5 +56,5 @@ for key, currency in data.items():
 
     print("Total Supply :                         " + total_supply_string)
     print("Circulating Supply :                   " + total_supply_string)
-    print("Percentage of coins in circulation :   " + str(int(circulating_supply / total_supply)) + "%")
+    print("Percentage of coins in circulation :   " + str(round(circulating_supply / total_supply)*100) + "%")
     print()
