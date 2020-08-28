@@ -1,8 +1,6 @@
-import os
-import json
 from datetime import datetime
+from colorama import Back, Style
 from prettytable import PrettyTable
-from colorama import Fore, Back, Style
 from requests import Session
 
 
