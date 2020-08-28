@@ -46,3 +46,7 @@ with open("portfolio.txt") as inp:
     for line in inp:
         name, amount = line.split()
         ticker = name.upper()
+
+        ticker_url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?id=' + str(ticker_url_pairs[ticker])
+
+
