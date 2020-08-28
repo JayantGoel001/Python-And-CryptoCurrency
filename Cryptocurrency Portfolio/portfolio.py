@@ -47,7 +47,8 @@ with open("portfolio.txt") as inp:
         ticker, amount = line.split()
         ticker = ticker.upper()
 
-        ticker_url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?id=' + str(ticker_url_pairs[ticker]) +"&?convert=" + convert
+        ticker_url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?id=' + str(
+            ticker_url_pairs[ticker]) + "&?convert=" + convert
 
         results_ticker = getResult(ticker_url)
         currency = results_ticker['data'][str(ticker_url_pairs[ticker])]
@@ -65,3 +66,25 @@ with open("portfolio.txt") as inp:
         value = float(price) * float(amount)
 
         portfolio_val += value
+
+        value_string = "{:,}".format(round(value, 2))
+        table.add_row([
+            name + "(" + symbol + ")",
+            'Rs.' + value_string,
+            'Rs.' + str(price),
+            str(hour_change),
+            str(day_change),
+            str(week_change)
+        ])
+
+print(table)
+print()
+
+portfolio_val_string = '{:,}'.format(round(portfolio_val, 2))
+x = datetime.timestamp(datetime.strptime(last_updated, "%Y-%m-%dT%H:%M:%S.%fZ"))
+last_updated_date = datetime.fromtimestamp(x).strftime('%B %d,%Y at %I:%M%p')
+
+print("Total Portfolio Values : "+portfolio_val_string)
+print()
+print("API results last updated on "+last_updated_date)
+print()
