@@ -66,22 +66,20 @@ with open("portfolio.txt") as inp:
         price = quotes["price"]
         value = float(price) * float(amount)
 
-        if hour_change>0:
+        if hour_change > 0:
             hour_change = Back.GREEN + str(hour_change) + '%' + Style.RESET_ALL
         else:
             hour_change = Back.RED + str(hour_change) + '%' + Style.RESET_ALL
 
-        if day_change>0:
+        if day_change > 0:
             day_change = Back.GREEN + str(day_change) + '%' + Style.RESET_ALL
         else:
             day_change = Back.RED + str(day_change) + '%' + Style.RESET_ALL
 
-        if week_change>0:
+        if week_change > 0:
             week_change = Back.GREEN + str(week_change) + '%' + Style.RESET_ALL
         else:
             week_change = Back.RED + str(week_change) + '%' + Style.RESET_ALL
-
-
 
         portfolio_val += value
 
@@ -103,7 +101,7 @@ portfolio_val_string = '{:,}'.format(round(portfolio_val, 2))
 x = datetime.timestamp(datetime.strptime(last_updated, "%Y-%m-%dT%H:%M:%S.%fZ"))
 last_updated_date = datetime.fromtimestamp(x).strftime('%B %d,%Y at %I:%M%p')
 
-print("Total Portfolio Values : "+Back.GREEN + "Rs." + portfolio_val_string + Style.RESET_ALL)
+print("Total Portfolio Values : " + Back.GREEN + "Rs." + portfolio_val_string + Style.RESET_ALL)
 print()
-print("API results last updated on "+last_updated_date)
+print("API results last updated on " + last_updated_date)
 print()
