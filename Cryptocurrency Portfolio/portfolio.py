@@ -20,7 +20,7 @@ def getResult(link):
     return results_res
 
 
-convert = 'USD'
+convert = 'INR'
 url = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?convert=" + convert
 results = getResult(url)
 
@@ -33,4 +33,16 @@ for currency in data:
     url = currency['id']
     ticker_url_pairs[symbol] = url
 
+print()
+print("MY PORTFOLIO")
+print()
 
+portfolio_val = 0.00
+last_updated = 0
+
+table = PrettyTable(['Asset', 'Amount Owned', convert + ' Value', 'Price', '1h', '24h', '7d'])
+
+with open("portfolio.txt") as inp:
+    for line in inp:
+        name, amount = line.split()
+        ticker = name.upper()
