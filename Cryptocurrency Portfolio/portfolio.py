@@ -44,9 +44,24 @@ table = PrettyTable(['Asset', 'Amount Owned', convert + ' Value', 'Price', '1h',
 
 with open("portfolio.txt") as inp:
     for line in inp:
-        name, amount = line.split()
-        ticker = name.upper()
+        ticker, amount = line.split()
+        ticker = ticker.upper()
 
-        ticker_url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?id=' + str(ticker_url_pairs[ticker])
+        ticker_url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?id=' + str(ticker_url_pairs[ticker]) +"&?convert=" + convert
 
+        results_ticker = getResult(ticker_url)
+        currency = results_ticker['data'][str(ticker_url_pairs[ticker])]
+        rank = currency["cmc_rank"]
+        name = currency["name"]
+        symbol = currency["symbol"]
+        last_updated = currency["last_updated"]
+        quotes = currency["quote"][convert]
+        market_cap = quotes["market_cap"]
+        hour_change = quotes["percent_change_1h"]
+        day_change = quotes["percent_change_24h"]
+        week_change = quotes["percent_change_7d"]
 
+        price = quotes["price"]
+        value = float(price) * float(amount)
+
+        portfolio_val += value
