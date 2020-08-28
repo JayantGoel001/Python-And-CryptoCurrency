@@ -48,10 +48,11 @@ with open("portfolio.txt") as inp:
         ticker = ticker.upper()
 
         ticker_url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?id=' + str(
-            ticker_url_pairs[ticker]) + "&?convert=" + convert
+            ticker_url_pairs[ticker]) + "&convert=" + convert
 
         results_ticker = getResult(ticker_url)
         currency = results_ticker['data'][str(ticker_url_pairs[ticker])]
+
         rank = currency["cmc_rank"]
         name = currency["name"]
         symbol = currency["symbol"]
@@ -70,6 +71,7 @@ with open("portfolio.txt") as inp:
         value_string = "{:,}".format(round(value, 2))
         table.add_row([
             name + "(" + symbol + ")",
+            amount,
             'Rs.' + value_string,
             'Rs.' + str(price),
             str(hour_change),
