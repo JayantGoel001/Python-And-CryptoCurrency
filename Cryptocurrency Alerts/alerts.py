@@ -1,5 +1,5 @@
+import os
 from datetime import datetime
-import time
 from requests import Session
 
 
@@ -20,7 +20,6 @@ def getResult(link):
 convert = 'INR'
 url = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?convert=" + convert
 results = getResult(url)
-
 data = results['data']
 
 ticker_url_pairs = {}
@@ -48,7 +47,21 @@ while True:
 
             currency = results_ticker['data'][str(ticker_url_pairs[ticker])]
 
-            rank = currency["cmc_rank"]
             name = currency["name"]
             symbol = currency["symbol"]
             last_updated = currency["last_updated"]
+
+            quotes = currency["quote"][convert]
+            price = quotes['price']
+            if float(price) >= float(amount) and symbol not in already_hit_symbol:
+
+                os.system('say '+str(name)+' hit '+str(amount))
+
+                x = datetime.timestamp(datetime.strptime(last_updated, "%Y-%m-%dT%H:%M:%S.%fZ"))
+                last_updated_date = datetime.fromtimestamp(x).strftime('%B %d,%Y at %I:%M%p')
+
+                print(name + " hit " + amount + " on "+last_updated_date)
+                already_hit_symbol.append(symbol)
+
+print("...")
+time.sleep(300)
