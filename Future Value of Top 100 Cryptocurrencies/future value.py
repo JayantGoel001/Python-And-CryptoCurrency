@@ -1,7 +1,5 @@
-import math
-import json
 import locale
-import requests
+import math
 from prettytable import PrettyTable
 from requests import Session
 
