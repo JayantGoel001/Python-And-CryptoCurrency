@@ -27,7 +27,7 @@ ticker_url = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/lates
 
 results = getResult(global_url)
 data = results['data']
-global_cap = int(data['quote'][convert]['market_cap'])
+global_cap = int(data['quote'][convert]['total_market_cap'])
 
 table = PrettyTable(
     [
@@ -62,15 +62,16 @@ for currency in data:
 
     percentage_of_global_cap_string = str(round(percentage_of_global_cap * 100, 2)) + "%"
     currency_price_string = 'Rs.' + str(current_price)
-    trillion10price_string = 'Rs.' + locale.format('%.2f', trillion10price, True)
-    trillion35price_string = 'Rs.' + locale.format('%.2f', trillion35price, True)
-    trillion89price_string = 'Rs.' + locale.format('%.2f', trillion89price, True)
-    trillion95price_string = 'Rs.' + locale.format('%.2f', trillion95price, True)
-    trillion280price_string = 'Rs.' + locale.format('%.2f', trillion280price, True)
-    trillion558price_string = 'Rs.' + locale.format('%.2f', trillion558price, True)
+    trillion10price_string = 'Rs.' + locale.format_string('%.2f', trillion10price, True)
+    trillion35price_string = 'Rs.' + locale.format_string('%.2f', trillion35price, True)
+    trillion89price_string = 'Rs.' + locale.format_string('%.2f', trillion89price, True)
+    trillion95price_string = 'Rs.' + locale.format_string('%.2f', trillion95price, True)
+    trillion280price_string = 'Rs.' + locale.format_string('%.2f', trillion280price, True)
+    trillion558price_string = 'Rs.' + locale.format_string('%.2f', trillion558price, True)
 
     table.add_row(
         [
+            name,
             ticker,
             percentage_of_global_cap_string,
             currency_price_string,
