@@ -99,6 +99,6 @@ for currency in data:
         ]
     )
 
-    print()
-    print(table)
-    print()
+print()
+print(table)
+print()
