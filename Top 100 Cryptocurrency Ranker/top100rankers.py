@@ -38,7 +38,7 @@ print("3---> Top 100 sorted by 24 hour Volume")
 print()
 
 choice = input("What is your choice?:")
-ticker_url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?convert='+convert
+ticker_url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?convert=' + convert
 
 if choice == '1':
     ticker_url += ''
@@ -49,5 +49,33 @@ if choice == '3':
 
 results = getResult(ticker_url)
 data = results['data']
-print(results)
+
 table = PrettyTable(['Rank', 'Asset', 'Price', 'Market Cap', 'Volume', '1h', '24h', '7d'])
+for currency in data:
+    rank = currency["cmc_rank"]
+    name = currency["name"]
+    symbol = currency["symbol"]
+    last_updated = currency["last_updated"]
+    quotes = currency["quote"][convert]
+    market_cap = quotes["market_cap"]
+    hour_change = quotes["percent_change_1h"]
+    day_change = quotes["percent_change_24h"]
+    week_change = quotes["percent_change_7d"]
+
+    price = quotes["price"]
+    volume = quotes['volume']
+
+    if hour_change is not None and hour_change > 0:
+        hour_change = Back.GREEN + str(hour_change) + '%' + Style.RESET_ALL
+    else:
+        hour_change = Back.RED + str(hour_change) + '%' + Style.RESET_ALL
+
+    if day_change is not None and day_change > 0:
+        day_change = Back.GREEN + str(day_change) + '%' + Style.RESET_ALL
+    else:
+        day_change = Back.RED + str(day_change) + '%' + Style.RESET_ALL
+
+    if week_change is not None and week_change > 0:
+        week_change = Back.GREEN + str(week_change) + '%' + Style.RESET_ALL
+    else:
+        week_change = Back.RED + str(week_change) + '%' + Style.RESET_ALL
