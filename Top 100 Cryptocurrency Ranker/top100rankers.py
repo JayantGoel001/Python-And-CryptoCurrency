@@ -1,4 +1,3 @@
-from datetime import datetime
 from colorama import Back, Style
 from prettytable import PrettyTable
 from requests import Session
