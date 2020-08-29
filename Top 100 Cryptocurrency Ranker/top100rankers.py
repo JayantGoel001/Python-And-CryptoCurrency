@@ -63,7 +63,7 @@ for currency in data:
     week_change = quotes["percent_change_7d"]
 
     price = quotes["price"]
-    volume = quotes['volume']
+    volume = quotes['volume_24h']
 
     if hour_change is not None and hour_change > 0:
         hour_change = Back.GREEN + str(hour_change) + '%' + Style.RESET_ALL
@@ -79,3 +79,26 @@ for currency in data:
         week_change = Back.GREEN + str(week_change) + '%' + Style.RESET_ALL
     else:
         week_change = Back.RED + str(week_change) + '%' + Style.RESET_ALL
+
+    if volume is not None:
+        volume_string = "{:,}".format(volume)
+
+    if market_cap is not None:
+        market_cap = "{:,}".format(market_cap)
+
+    table.add_row(
+        [
+            rank,
+            name + '(' + symbol + ')',
+            'Rs.' + str(price),
+            'Rs.' + str(market_cap),
+            'Rs.' + volume_string,
+            str(hour_change),
+            str(day_change),
+            str(week_change)
+        ]
+    )
+
+    print()
+    print(table)
+    print()
