@@ -35,15 +35,36 @@ table = PrettyTable(
         'Ticker',
         '% of total global cap',
         'Current',
-        '7.7T(GOLD)',
-        '36.8T (Narrow Money)',
-        '73T(World Stock Markets)',
-        '90.4T(Broad Money)',
-        '217T (Real Estate)',
-        '544T(Derivatives)'
+        '10.9T(GOLD)',
+        '35.2T (Narrow Money)',
+        '89.5T(World Stock Markets)',
+        '95.7T(Broad Money)',
+        '280.6T (Real Estate)',
+        '558.5T(Derivatives)'
     ]
 )
 
 results_ticker = getResult(ticker_url)
 data = results_ticker['data']
+for currency in data:
+    name = currency['name']
+    ticker = currency['symbol']
+    percentage_of_global_cap = float(currency['quote'][convert]['market_cap']) / float(global_cap)
 
+    current_price = round(float(currency['quote'][convert]['price']), 2)
+    available_supply = float(currency['total_supply'])
+    trillion10price = round(10.9 * math.pow(10, 9) * percentage_of_global_cap / available_supply, 2)
+    trillion35price = round(35.2 * math.pow(10, 9) * percentage_of_global_cap / available_supply, 2)
+    trillion89price = round(89.5 * math.pow(10, 9) * percentage_of_global_cap / available_supply, 2)
+    trillion95price = round(95.7 * math.pow(10, 9) * percentage_of_global_cap / available_supply, 2)
+    trillion280price = round(280.6 * math.pow(10, 9) * percentage_of_global_cap / available_supply, 2)
+    trillion558price = round(558.5 * math.pow(10, 9) * percentage_of_global_cap / available_supply, 2)
+
+    percentage_of_global_cap_string = str(round(percentage_of_global_cap * 100, 2)) + "%"
+    currency_price_string = 'Rs.' + str(current_price)
+    trillion10price_string = 'Rs.' + locale.format('%.2f', trillion10price, True)
+    trillion35price_string = 'Rs.' + locale.format('%.2f', trillion35price, True)
+    trillion89price_string = 'Rs.' + locale.format('%.2f', trillion89price, True)
+    trillion95price_string = 'Rs.' + locale.format('%.2f', trillion95price, True)
+    trillion280price_string = 'Rs.' + locale.format('%.2f', trillion280price, True)
+    trillion558price_string = 'Rs.' + locale.format('%.2f', trillion558price, True)
