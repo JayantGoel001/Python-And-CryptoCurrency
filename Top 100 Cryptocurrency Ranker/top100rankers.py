@@ -29,7 +29,7 @@ global_cap_string = "{:,}".format(global_cap)
 
 print()
 print("Coin Market")
-print("The global market cap is Rs."+global_cap_string)
+print("The global market cap is Rs." + global_cap_string)
 print()
 print("1---> Top 100 sorted by rank.")
 print("2---> Top 100 sorted by 24 hour change")
@@ -38,3 +38,16 @@ print("3---> Top 100 sorted by 24 hour Volume")
 print()
 
 choice = input("What is your choice?:")
+ticker_url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?convert='+convert
+
+if choice == '1':
+    ticker_url += ''
+if choice == '2':
+    ticker_url += '&sort=percent_change_24h'
+if choice == '3':
+    ticker_url += '&sort=volume_24h'
+
+results = getResult(ticker_url)
+data = results['data']
+print(results)
+table = PrettyTable(['Rank', 'Asset', 'Price', 'Market Cap', 'Volume', '1h', '24h', '7d'])
