@@ -68,3 +68,21 @@ for currency in data:
     trillion95price_string = 'Rs.' + locale.format('%.2f', trillion95price, True)
     trillion280price_string = 'Rs.' + locale.format('%.2f', trillion280price, True)
     trillion558price_string = 'Rs.' + locale.format('%.2f', trillion558price, True)
+
+    table.add_row(
+        [
+            ticker,
+            percentage_of_global_cap_string,
+            currency_price_string,
+            trillion10price_string,
+            trillion35price_string,
+            trillion89price_string,
+            trillion95price_string,
+            trillion280price_string,
+            trillion558price_string
+        ]
+    )
+
+print()
+print(table)
+print()
